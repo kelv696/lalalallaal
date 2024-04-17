@@ -1,0 +1,181 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - Hi
+    - Hey
+    - Hello
+    - Good morning
+    - Good afternoon
+    - Good evening
+    - how are you 
+    - how are you doing
+    - how is your day
+    - Hi
+    - Hey
+    - Greetings
+    - Good morning
+    - Good afternoon
+    - Good evening
+    - How are you
+    - Hows it going
+    - Whats up
+    - Hows everything
+    - How is your day
+    - Nice to meet you
+    - Pleased to meet you
+    - How do you do
+    - Whats new
+    - How have you been
+    - Long time no see
+    - Welcome
+    - Yo
+    - Hiya
+    - Howdy
+    - Sup
+    - Cheers
+    - Salutations
+     
+
+
+- intent: positve_confirmation
+  examples: |
+    - postive  
+    - thats correct
+    - that is very much correct 
+    - correct 
+    - Thanks that helps
+    - yes that is the right answer
+    - perfect
+    - that is perfect
+
+
+
+      
+
+- intent: ask_admission_requirements
+  examples: |
+    - What are the entry requirements for the AI course?
+    - What grades do I need to apply for the artificial intelligence program?
+    - What qualifications are needed for admission to the AI BSc?
+    - Can you tell me the academic criteria for enrolling in the AI program?
+    - What academic standards must I meet to be eligible for the AI course?
+    - What prerequisites are there for the artificial intelligence degree?
+    - What do I need to qualify for the AI undergraduate program?
+    - Could you specify the entry qualifications for the artificial intelligence BSc program?
+    - What are the academic requirements for prospective AI students?
+    - ow do I qualify for admission into the artificial intelligence program?
+
+
+- intent: ask_accommodation
+  examples: |
+    - Tell me about accommodations
+    - What kind of accommodation options do you have?
+    - I'm looking for information on the different accommodation choices.
+    - Can you tell me more about the available accommodation
+    - I need to know about the accommodation options
+    - Please provide details on the accommodation offerings
+    
+
+- intent: ask_university_accommodation
+  examples: |
+    - Tell me about uni accoms  
+    - Im interested in the accommodation provided by the university
+    - What kind of on-campus housing options do you have
+    - Can you give me information about the university's accommodation
+    - I'd like to learn more about the accommodation options through the university
+    - Please tell me about the accommodation available from the university
+    - university accommodation 
+
+- intent: ask_waterside
+  examples: |
+    - I heard about the Waterside accommodation, can you tell me more about it
+    - What can you tell me about the Waterside student housing
+    - I'm considering the Waterside option, can you provide some details
+    - Could you describe the waterside accommodation for me
+    - Im interested in learning about the Waterside residence hall
+    
+
+- intent: ask_stjones
+  examples: |
+    - What can you tell me about the Stjohnes accommodation
+    - I'd like to know more about the st johnes student housing
+    - Please provide information about the StJohns accommodation option
+    - Can you give me details on the St Johns residence hall
+    - I'm curious to learn about the St.Jones accommodation
+     
+
+- intent: ask_scholars
+  examples: |
+    - I'm looking into the Scholars accommodation, what can you tell me about it
+    - Could you describe the Scholars student housing for me
+    - What information can you provide about the Scholars accommodation
+    - I'd like to know more details on the Scholars residence option
+    - Please share details about the Scholars accommodation
+    - Scholars Green
+    - scholars green
+    
+
+- intent: ask_external_accommodation
+  examples: | 
+    - Im interested in accommodation options not provided by the university
+    - not provided by the university
+    - Can you tell me about off-campus housing choices
+    - off-campus
+    - What kind of external accommodation options are available
+    - external accommodation
+    - I'd like to learn about accommodation alternatives outside the university
+    - Please provide information on accommodation options not run by the university
+    - elsewhere
+    
+
+- intent: ask_student_life
+  examples: |
+    - What is student life like at the University of Northampton?
+    - What can I do in Northampton as a student?
+    - student life
+    - Student life 
+    - Are there any clubs or societies I can join?
+    - What events are organized by the Students' Union?
+
+- intent: ask_visa_requirements
+  examples: |
+    - Do I need a visa to study at Northampton?
+    - What type of visa is required for international students?
+    - How do I apply for a student visa?
+    - Is there any support for visa applications?
+
+- intent: ask_module_info
+  examples: |
+    - Can you tell me about the [Fundamentals of AI](module) module?
+    - What will I learn in [Applied Machine Learning](module)?
+    - How is the [Robotics](module) module assessed?
+    - What are the learning outcomes for [Knowledge Representation and Reasoning](module)?
+
+- intent: modulename_or_coursename
+  examples: |
+    - [Relational Databases](module_name)
+    - Module name is [Relational databases](module_name)
+    - Module name is [Artificial Intelligence Fundamentals](module_name)
+    - Module Code is [CSY2080](module_code: /[Cc][Ss][Yy]\d{4}/)
+- intent: ask_general_question
+  examples: |
+    - How do I contact the admissions team?
+    - When does the academic year start?
+    - Are there any scholarships available for AI students?
+    - What careers can I pursue with an AI degree?
+
+- intent: thank
+  examples: |
+    - Thanks
+    - Thank you
+    - That's helpful
+    - Appreciate the information
+
+- intent: goodbye
+  examples: |
+    - Bye
+    - Goodbye
+    - See you later
+    - Take care
+

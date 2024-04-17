@@ -1,0 +1,50 @@
+version: "2.0"
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+  
+- rule: Say 'I am glad I helped' anytime the user gives a positve_confirmation
+  steps:
+  - intent: positve_confirmation
+  - action: utter_youre_welcome
+
+  #accom
+- rule: Say 'what type of the accom are you looking for' anytime the user asks about accoms
+  steps:
+  - intent: ask_accommodation
+  - action: utter_ask_accommodation 
+
+
+- rule: List information about university accommodation 
+  steps:
+  - intent: ask_university_accommodation
+  - action: utter_ask_accommodation
+
+
+- rule: List information about waterside
+  steps:
+  - intent: ask_waterside 
+  - action: utter_ask_accommodation_waterside
+
+
+- rule: List information about stjones
+  steps:
+  - intent: ask_stjones
+  - action: utter_stjohn_accommodation
+
+- rule: List information about scholors
+  steps:
+  - intent: ask_scholars
+  - action: utter_schol_accommodation
+
+- rule: say "Check on right move" when asked about non uni run accommodations
+  steps:
+  - intent: ask_external_accommodation
+  - action: utter_non_uni_accommodation

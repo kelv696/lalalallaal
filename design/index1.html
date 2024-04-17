@@ -1,0 +1,147 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> <title>Chatbot GUI</title> <style> .typing-effect { display: inline-block; overflow: hidden; white-space: nowrap; border-right: 2px solid; animation: typing 2s steps(30, end), blink-caret 0.5s step-end infinite; }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: currentColor }
+        }
+
+        .hide-cursor {
+            border-right: none;
+            animation: none;
+        }
+
+        .bot-message {
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+    </style>
+
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8 h-screen">
+        <div class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col">
+            <div class="mb-4 flex justify-between items-center">
+                <h2 class="text-2xl font-semibold text-indigo-600">Chatbot</h2>
+                <button id="voice-button" class="bg-indigo-500 hover:bg-indigo-600 text-white px-4 py-2 rounded-lg focus:outline-none">
+                    <img class="max-h-5" src="https://s3-alpha.figma.com/hub/file/3858571977/5a78c81c-36ff-4681-8907-cd7df5955365-cover.png" alt="">
+                </button>
+            </div>
+            <div id="chat-messages" class="flex-grow overflow-y-auto">
+            </div>
+            <div class="mt-4">
+                <input id="user-input" type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Type your message...">
+            </div>
+        </div>
+    </div>
+       <script>
+
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const voiceButton = document.getElementById('voice-button');
+
+            userInput.addEventListener('keydown', function(event) {
+                            if (event.key === 'Enter') {
+                                            const userMessage = userInput.value;
+                                            displayMessage(userMessage, 'user');
+                                            sendMessage(userMessage);
+                                            userInput.value = '';
+                                        }
+                        });
+
+            voiceButton.addEventListener('click', function() {
+                            const lastBotMessage = chatMessages.lastElementChild.querySelector('p').textContent;
+                            speakMessage(lastBotMessage);
+                        });
+
+         function displayMessage(message, sender) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('flex', 'mb-4');
+
+            if (sender === 'bot') {
+                messageElement.innerHTML = `
+                    <div class="bg-indigo-500 text-justify text-white p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96">
+                        <p class="typing-effect"></p>
+                    </div>
+                `;
+                const typingElement = messageElement.querySelector('.typing-effect');
+                typeMessage(message, typingElement);
+            } else {
+                messageElement.classList.add('justify-end');
+                messageElement.innerHTML = `
+                    <div class="bg-gray-200 text-gray-800 p-3 rounded-lg max-w-xs">
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+ function typeMessage(message, element) {
+                let i = 0;
+                element.classList.add('hide-cursor');
+                const typing = setInterval(() => {
+                    
+                    if (i < message.length) {
+                        if((i%100) == 99){
+                            var j = i;
+                            for(j= i;j<message.length;j++){
+                                element.innerHTML += message.charAt(j);
+                                if(message[j] == ' '){
+                                    break;
+                                }
+                            }
+                            i = j+1;
+                            element.innerHTML += '<br>';
+                        }
+                        else{
+                            element.innerHTML += message.charAt(i);
+                            i++;
+                        }
+                        
+                    } else {
+                        clearInterval(typing);
+                        setTimeout(() => {
+                        }, 1000);
+                    }
+                }, 50);
+                element.classList.add('text-justify');
+
+            }
+                    function speakMessage(message) {
+                            const speech = new SpeechSynthesisUtterance(message);
+                            window.speechSynthesis.speak(speech);
+                        }
+
+            async function sendMessage(message) {
+                            try {
+                                            const response = await fetch('http://localhost:5005/webhooks/rest/webhook', {
+                                                            method: 'POST',
+                                                            headers: {
+                                                                            'Content-Type': 'application/json'
+                                                                        },
+                                                            body: JSON.stringify({ sender: 'user', message: message })
+                                                        });
+
+                                            const data = await response.json();
+
+                                            if (data && data.length > 0 && data[0].text) {
+                                                            const botMessage = data[0].text;
+                                                            displayMessage(botMessage, 'bot');
+                                                        } else {
+                                                                        console.error('Unexpected response format:', data);
+                                                                        displayMessage('Sorry, I encountered an error.', 'bot');
+                                                                    }
+                                        } catch (error) {
+                                                        console.error('Error:', error);
+                                                        displayMessage('Sorry, I encountered an error.', 'bot');
+                                                    }
+                        }
+        </script>
+    </body>
+</html>

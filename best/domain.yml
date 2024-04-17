@@ -1,0 +1,120 @@
+version: "2.0"
+intents:
+  - greet
+  - ask_admission_requirements
+  - ask_accommodation
+  - ask_student_life
+  - ask_visa_requirements
+  - ask_module_info
+  - ask_general_question
+  - thank
+  - goodbye
+  - bot_challenge
+  - modulename_or_coursename
+  - positive_confirmation
+  - ask_university_accommodation
+  - ask_waterside
+  - ask_stjones
+  - ask_scholars
+  - ask_external_accommodation
+
+
+entities:
+  - module
+  - module_name
+  - module_code
+
+
+slots:
+  module:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: module
+
+responses:
+  utter_greet:
+  - text: "Hello! I'm the University of Northampton's AI course assistant. How can I help you today?"
+
+  utter_admission_requirements:
+  - text: "To apply for the AI course, you typically need BCC at A Level or DMM at BTEC, along with a GCSE Mathematics at grade 4 (or C) or above. We consider each applicant individually, so relevant experience can also support your application. International students need an IELTS score of 6.0 or equivalent."
+
+  utter_accommodation_options:
+  - text: "The university offers several different accommodation options. The main ones are Waterside, St.Jones, and Scholes. Which of those are you most interested in learning about?"
+
+  utter_student_life_info:
+  - text: "Student life at the University of Northampton is vibrant and engaging. The Students' Union organizes various events and activities throughout the year. There are also numerous sports clubs and societies you can join to meet like-minded people. Northampton itself is a welcoming town with parks, museums, and cultural attractions to explore."
+
+  utter_visa_requirements:
+  - text: "International students from outside the UK or Ireland may need a visa to study at the University of Northampton. The type of visa depends on your country of origin and the length of your course. You can apply for a visa up to 6 months before the start of your course, and the University provides guidance and support for visa applications."
+
+  utter_ask_more_questions:
+  - text: "Do you have any other questions about the AI course or studying at the University of Northampton?"
+
+  utter_youre_welcome:
+  - text: "You're welcome! It's my pleasure to help."
+
+  utter_goodbye:
+  - text: "Goodbye! If you have any more questions, feel free to ask. Best of luck with your AI studies!"
+
+  utter_iamabot:
+  - text: "I am an AI chatbot designed to provide information about the University of Northampton's artificial intelligence program. How else can I assist you today?"
+
+  utter_ask_year:
+  - text: "For asking about the following information, can you please confirm me your year of study?"
+
+  utter_ask_modulename_or_coursename:
+  - text: "Thank you, please can you tell me the module you are asking for?"
+
+#accom
+  utter_ask_accommodation:
+  - text: "Sure, I'd be happy to help. What type of accommodation are you looking for? Are you interested in options provided by the university, or are you looking for accommodation elsewhere?"
+  
+
+
+  utter_ask_accommodation_waterside:
+  - text: "The Waterside accommodation is one of the university's premier on-campus housing options. Some key details about Waterside:
+          . It's a modern, purpose-built residence hall located right on the waterfront, offering beautiful views CHANGE THIS. 
+          . Rooms are spacious and come fully furnished, with en-suite bathrooms.
+          . Amenities include a gym, common lounge areas, and a café.
+          . The accommodation is very popular, so I'd recommend applying early. You can find more details and the application process on the university's housing website [provide link]."
+
+
+  utter_stjohn_accommodation:
+  - text: "The St. Jones accommodation is one of the university's historic on-campus housing options. Some key details about St. Jones:
+           It's a traditional residence hall with a charming, collegiate atmosphere.
+           Rooms are well-appointed and come furnished, with shared bathroom facilities.
+           Amenities include a common lounge, study spaces, and a small café.
+           The St. Jones accommodation is popular among students who appreciate the classic university living experience.
+           You can find more information about the application process and availability on the university's housing website [provide link]."
+
+
+  utter_schol_accommodation:
+  - text: "The Scholars accommodation is one of the university's premier on-campus housing options. Some key details about Scholars:
+           It's a modern, purpose-built residence hall designed to foster a collaborative, intellectually-stimulating environment.
+           Rooms are spacious and come fully furnished, with private en-suite bathrooms.
+           Amenities include a 24/7 study lounge, computer lab, and seminar rooms to support academic success.
+           The Scholars accommodation is very popular among students who value an academically-focused living experience.
+           Due to its high demand, I'd recommend applying early. You can find the application process and more details on the university's housing website [provide link]"
+
+  utter_non_uni_accommodation:
+  - text: "For privately-rented housing, there are a few key things to keep in mind:
+          Location - Look for properties that are conveniently located near campus or have good public transportation links. This can help minimize your commute time.
+          Costs - Privately-rented accommodations may have lower base rents compared to university housing, but you'll need to budget for additional expenses like utilities, internet, and contents insurance.
+          Roommates - Many students opt to rent a house or flat with friends, which can help split the costs. The university's accommodation office may be able to provide resources to help you find compatible roommates.
+          Tenancy agreements - Be sure to carefully review any rental contracts and understand your rights and responsibilities as a tenant. The university can provide guidance on what to look for.
+          Accessibility - If you have any specific accessibility requirements, make sure to communicate those upfront with potential landlords to ensure the property can meet your needs.
+          I would suggest you looking on right move and searching student accommodations [insert link]"
+
+
+
+
+
+actions:
+  - action_module_info
+  - action_general_question
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+

@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command: ["run", "--enable-api", "--cors", "*"]
+
+  action_server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./actions:/app/actions
+    command: ["run", "actions"]
+
+networks:
+  default:
+    name: rasa_network
+
+volumes:
+  rasa_data:
+
