@@ -8,25 +8,16 @@ nlu:
     - Good morning
     - Good afternoon
     - Good evening
-    - how are you 
-    - how are you doing
-    - how is your day
-    - Hi
-    - Hey
+    - hi
+    - hey
     - Greetings
     - Good morning
     - Good afternoon
     - Good evening
-    - How are you
-    - Hows it going
     - Whats up
-    - Hows everything
-    - How is your day
     - Nice to meet you
     - Pleased to meet you
-    - How do you do
     - Whats new
-    - How have you been
     - Long time no see
     - Welcome
     - Yo
@@ -67,6 +58,7 @@ nlu:
     - ow do I qualify for admission into the artificial intelligence program?
 
 
+
 - intent: ask_accommodation
   examples: |
     - Tell me about accommodations
@@ -75,6 +67,9 @@ nlu:
     - Can you tell me more about the available accommodation
     - I need to know about the accommodation options
     - Please provide details on the accommodation offerings
+    - accoms
+    - i want to know about accoms 
+    - i need help with accoms  
     
 
 - intent: ask_university_accommodation
@@ -86,6 +81,11 @@ nlu:
     - I'd like to learn more about the accommodation options through the university
     - Please tell me about the accommodation available from the university
     - university accommodation 
+    - university
+    - uni accoms
+    - uni 
+    - run by uni 
+    - run by university 
 
 - intent: ask_waterside
   examples: |
@@ -94,6 +94,7 @@ nlu:
     - I'm considering the Waterside option, can you provide some details
     - Could you describe the waterside accommodation for me
     - Im interested in learning about the Waterside residence hall
+    - about waterside
     
 
 - intent: ask_stjones
@@ -103,6 +104,7 @@ nlu:
     - Please provide information about the StJohns accommodation option
     - Can you give me details on the St Johns residence hall
     - I'm curious to learn about the St.Jones accommodation
+    - about stjohns
      
 
 - intent: ask_scholars
@@ -114,6 +116,7 @@ nlu:
     - Please share details about the Scholars accommodation
     - Scholars Green
     - scholars green
+    - about scholars
     
 
 - intent: ask_external_accommodation
@@ -127,6 +130,7 @@ nlu:
     - I'd like to learn about accommodation alternatives outside the university
     - Please provide information on accommodation options not run by the university
     - elsewhere
+    - private accoms
     
 
 - intent: ask_student_life
@@ -158,6 +162,8 @@ nlu:
     - Module name is [Relational databases](module_name)
     - Module name is [Artificial Intelligence Fundamentals](module_name)
     - Module Code is [CSY2080](module_code: /[Cc][Ss][Yy]\d{4}/)
+
+
 - intent: ask_general_question
   examples: |
     - How do I contact the admissions team?
@@ -178,4 +184,114 @@ nlu:
     - Goodbye
     - See you later
     - Take care
+
+
+- intent: bot_health
+  examples: |
+    - how are you?
+    - are you doing well
+    - you well 
+    - i hope you well?
+    - well are you 
+    - well you?
+    - You well 
+    - Well You 
+    - Hows everything
+    - How is your day
+    - How do you do
+    - How have you been
+
+- intent: user_postive_health
+  examples: |
+    - great
+    - I am good thanks
+    - happy
+    - very happy
+    - i am so happy  
+    - perfect thanks
+    - I am Perfect
+    - very good 
+    - good thanks
+    - doing well also thank you
+    - doing well 
+   
+
+- intent: user_negtive_health
+  examples: |
+    - not well
+    - i am sad
+    - sad  
+    - not well
+    - im kinda sad 
+    - not good
+    - very bad 
+    - bad 
+    - sady
+    - upset
+    - I am upset
+    - not happy 
+
+#lets make some for the ai actual course 
+
+- intent: about_ai_course
+  examples: |
+    - tell me about ai northampton 
+    - ai course
+    - ai course at northampton 
+    - northampton ai 
+    - ai northampton 
+    - Ai at UON 
+    - Artificial intelligence at Northampton 
+    - uon ai
+    - AI and data science at Northampton 
+
+
+- intent: what_need_for_ai
+  examples: |
+    - what do i need to study Ai
+    - study ai
+    - grades needed to study ai 
+    - what are the prerequisites 
+    - prerequisites 
+    - prerequisites for ai at northampton
+    - can i study ai at Nothampton
+    - what do i need to study ai at northampton 
+    - what do i need to study Artificial intelligence at Northampton 
+    - study Artificial intelligence at Northampton 
+    - entry requirements 
+    - Entry requirements 
+    - Requirements 
+
+- intent: genarl_ai_ask
+  examples: |
+    - tell me what ai is 
+    - what is ai 
+    - what is artificial intelligence 
+    - Tell me what ai is 
+    - what is ai 
+    - ai?
+    - AI
+    - artificial intelligence 
+    - explain ai 
+    - tell me ai 
+    - ai is 
+    - is ai
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+    
+  
+
+
 
