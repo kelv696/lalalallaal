@@ -38,3 +38,10 @@ stories:
 
   #add accom coversation next 
 
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: greet
+  - action: utter_greet

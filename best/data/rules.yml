@@ -88,6 +88,27 @@ rules:
   - intent: genarl_ai_ask
   - action: utter_what_is_ai 
 
+#work related static intents 
 
+- rule: give internship link and explain whilst plugging nn 
+  steps:
+  - intent: jobs_internships
+  - action: utter_internships   
 
+- rule: give placement link and explain whilst plugging nn 
+  steps:
+  - intent: jobs_placement
+  - action: utter_placement 
 
+- rule: give placement and internship tips briefly and give link to sight that helps 
+  steps:
+  - intent: securing_internship_placement  
+  - action: utter_job_help  
+
+#what can be done with the ai course 
+
+- rule: give examples of what students have done in ai course and what expect, job wise 
+  steps:
+  - intent: job_pros  
+  - action: utter_job_proc   
+ 

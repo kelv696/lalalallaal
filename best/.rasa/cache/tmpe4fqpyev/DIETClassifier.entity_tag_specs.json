@@ -1,0 +1,36 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-module",
+      "2": "I-module",
+      "3": "L-module",
+      "4": "U-module",
+      "5": "B-module_code",
+      "6": "I-module_code",
+      "7": "L-module_code",
+      "8": "U-module_code",
+      "9": "B-module_name",
+      "10": "I-module_name",
+      "11": "L-module_name",
+      "12": "U-module_name",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-module": 1,
+      "I-module": 2,
+      "L-module": 3,
+      "U-module": 4,
+      "B-module_code": 5,
+      "I-module_code": 6,
+      "L-module_code": 7,
+      "U-module_code": 8,
+      "B-module_name": 9,
+      "I-module_name": 10,
+      "L-module_name": 11,
+      "U-module_name": 12,
+      "O": 0
+    },
+    "num_tags": 13
+  }
+]
