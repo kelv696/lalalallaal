@@ -235,6 +235,7 @@ nlu:
 
 - intent: about_ai_course
   examples: |
+    - class
     - tell me about ai northampton 
     - ai course
     - ai course at northampton 
