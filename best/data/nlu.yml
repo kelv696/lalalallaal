@@ -133,7 +133,6 @@ nlu:
     - [Relational Databases](module_name)
     - Module name is [Relational databases](module_name)
     - Module name is [Artificial Intelligence Fundamentals](module_name)
-    - Module Code is [CSY2080]{"entity": "module_code", "value": " /[Cc][Ss][Yy]\\d{4}/"}
 - intent: ask_general_question
   examples: |
     - How do I contact the admissions team?
@@ -294,6 +293,3 @@ nlu:
     - success with ai
     - ai course success
     - success students
-- synonym: ' /[Cc][Ss][Yy]\d{4}/'
-  examples: |
-    - CSY2080
