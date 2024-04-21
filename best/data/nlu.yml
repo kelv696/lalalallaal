@@ -1,4 +1,4 @@
-version: "3.1"
+version: "2.0"
 nlu:
 - intent: greet
   examples: |
@@ -205,6 +205,67 @@ nlu:
     - Artificial intelligence at Northampton
     - uon ai
     - AI and data science at Northampton
+    - Can you describe the key components of the BSc Artificial Intelligence programme at the University of Northampton
+    - What are the main features of the BSc Artificial Intelligence programme offered by the University of Northampton
+    - What does the BSc Artificial Intelligence programme at the University of Northampton encompass
+    - Could you outline the core elements of the BSc Artificial Intelligence programme at the University of Northampton
+    - What constitutes the BSc Hons Artificial Intelligence programme at the University of Northampton
+    - What are the principal aspects of the BSc Artificial Intelligence programme provided by the University of Northampton?
+    - What are the major components included in the BSc Artificial Intelligence curriculum at the University of Northampton?
+    - Can you provide an overview of the BSc Artificial Intelligence programme at the University of Northampton?
+    - What are the foundational elements of the BSc Artificial Intelligence programme at the University of Northampton
+    - What does the curriculum of the BSc Artificial Intelligence at the University of Northampton include?
+    - Could you detail the structure of the BSc Artificial Intelligence programme at the University of Northampton
+    - What are the defining features of the BSc Artificial Intelligence programme at the University of Northampton
+    - Can you summarize the main points of the BSc Artificial Intelligence programme offered at the University of Northampton
+    - What are the key elements that make up the BSc Artificial Intelligence programme at the University of Northampton
+    - How is the BSc Artificial Intelligence programme at the University of Northampton structured?
+    - elvin this intent is ai course.
+    - What qualifications are required to enroll in the AI program at Northampton?
+    - What are the academic standards for admission into Northampton's AI course?
+    - What must I have to begin studying AI at Northampton University?
+    - Qualifications to start AI studies at Northampton?
+    - What academic criteria must I meet to study Artificial Intelligence at Northampton?
+    - Eligibility criteria for AI at Northampton?
+    - What are the admission prerequisites for AI at Northampton?
+    - Requirements for entering the AI program at Northampton?
+    - What do I need in terms of education to pursue AI at Northampton?
+    - What academic prerequisites must be fulfilled for studying AI at Northampton?
+    - Entry qualifications for Northamptons AI program?
+    - Can I qualify to study AI at Northampton with my current grades?
+    - What educational background is needed for AI at Northampton?
+    - Academic requirements for Northampton AI course?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 - intent: what_need_for_ai
   examples: |
     - what do i need to study Ai
