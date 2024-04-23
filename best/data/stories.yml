@@ -1,12 +1,5 @@
 version: "2.0"
 stories:
-- story: greet and ask about admission requirements
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_admission_requirements
-  - action: utter_admission_requirements
-  - action: utter_ask_more_questions
 
 
 - story: ask about student life
@@ -45,3 +38,9 @@ stories:
   - action: utter_greet
   - intent: greet
   - action: utter_greet
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: jobs_internships
