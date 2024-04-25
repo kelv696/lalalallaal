@@ -556,6 +556,8 @@ nlu:
     - help placement
     - how to apply for internships
     - how to apply for placement
+    - how to get an internship 
+    - how to get an placement
 - intent: job_pros
   examples: |
     - what can I expect with this course
