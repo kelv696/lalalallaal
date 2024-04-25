@@ -27,6 +27,7 @@ intents:
 - what_can_i_do_wit_ai
 - what_need_for_ai
 entities:
+- ' good'
 - module
 - module_name
 - module_code
@@ -87,22 +88,24 @@ responses:
   - text: When it comes to securing internships or placements I would recommend these tips- Start early and apply well in advance. Leverage your network of professors, counselors, and professionals. Tailor your application materials to each opportunity. Highlight relevant skills and experience. Prepare thoroughly for interviews. Follow up and express gratitude. Explore online job boards and networking platforms. Please check out this link as it highlights some of the things you can do to best prepare for an internship or placement opportunities ( https://www.northampton.ac.uk/blog/navigating-the-path-to-success-a-guide-to-securing-placements-and-internships/ )
   utter_job_proc:
   - text: There are a lot of job prospects if you chose to study AI and data science at northampton. Here are some of things students studying AI at Northampton have achieved with their course. Jatin - Secured a placement year at a top pharm Aria - received an offer at Qumin Kelvin - Secured an internship at in Technology at a Global investment bank Please look here for further information on how students are finding their course and their achievements ( https://uonai.blog/  )
+  utter_price_accoms:
+  - text: I see you are looking for pricing regarding accommodation, please tell me if you mean 'pricing for private accommodation' or if you 'pricing for halls accommodations'
+  utter_price_private_accoms:
+  - text: when it comrs to private renting, prices vary i would suggest looking on sights like right move (insert link)
+  utter_price_uni_accoms:
+  - text: when it comes to University pricing, accommodations prices vary. I suggest checking the accommodation website for further details
+    
+  
 actions:
 - utter_greet
+- utter_internships
+- utter_Iam_well
+- utter_user_pos_res
+- utter_ai_in_northampton
+- utter_non_uni_accommodation
+- utter_ask_accommodation
 - action_module_info
 - action_general_question
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
- their course and their achievements ( https://uonai.blog/  )"
-
-actions:
-  - action_module_info
-  - action_general_question
-
-
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
-

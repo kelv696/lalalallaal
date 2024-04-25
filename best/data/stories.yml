@@ -39,8 +39,28 @@ stories:
   - intent: greet
   - action: utter_greet
 
-- story: interactive_story_1
+
+- story: interactive_story_3
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: ask_accommodation
+  - action: utter_ask_accommodation
+  - intent: ask_external_accommodation
+  - action: utter_non_uni_accommodation
+  - intent: bot_health
+  - action: utter_Iam_well
+  - intent: bot_health
+  - action: utter_Iam_well
+  - intent: user_postive_health
+  - action: utter_user_pos_res
   - intent: jobs_internships
+  - action: utter_internships
+  - intent: what_need_for_ai
+  - intent: about_ai_course
+  - action: utter_ai_in_northampton
+  - intent: ask_module_info
+  - intent: what_need_for_ai
+  - intent: about_ai_course
+  - action: utter_ai_in_northampton
+  - intent: what_need_for_ai

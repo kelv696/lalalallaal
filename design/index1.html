@@ -7,8 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <title>Chatbot GUI</title>
     <style>
-
-        *{
+        * {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             font-size: 1em;
         }
@@ -20,14 +19,15 @@
             border-right: 2px solid;
             animation: typing 2s steps(30, end), blink-caret 0.5s step-end infinite;
         }
-        
-        *{
+
+        * {
             text-decoration: none;
         }
 
         a:visited {
             color: pink;
         }
+
         a:visited {
             color: pink;
         }
@@ -54,13 +54,14 @@
             }
         }
 
-        .lalala{
+        .lalala {
             background-color: #E0FBFC;
         }
-        .bg-gray-500{
+
+        .bg-gray-500 {
             background-color: #9DB4C0;
         }
-        
+
         .hide-cursor {
             border-right: none;
             animation: none;
@@ -90,10 +91,11 @@
 <body class="lalala">
     <div class="container mx-auto px-4 py-8 h-screen">
         <div class="bg-white shadow-lg rounded-lg p-6 h-full flex flex-col bg-gray-500">
-            <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center text-lalala" style="background-color: #E0FBFC;">
+            <div class="mb-4 flex rounded-lg shadow-lg justify-between items-center text-lalala"
+                style="background-color: #E0FBFC;">
                 <div class="header-container">
                     <h2 class="text-2xl font-semibold text-lalala display-1">Chatbot</h2>
-                  </div>
+                </div>
                 <button id="voice-button"
                     class="lalala hover:lalala text-white px-4 py-2 rounded-lg focus:outline-none">
                     <img class="max-h-5"
@@ -108,10 +110,17 @@
                     class="w-full px-4 py-2 border border-lalala rounded-lg focus:outline-none focus:ring-2 focus:ring-lalala"
                     placeholder="Type your message...">
             </div>
-            
+
         </div>
     </div>
     <script>
+
+        function displayInitialGreeting() {
+            displayMessage('Hello there, please select from the drop-down menu the topic of conversation you may need some assistance in and ask away. This makes my job just a little bit easier :)', 'bot');
+
+        }
+
+
 
         const chatMessages = document.getElementById('chat-messages');
         const userInput = document.getElementById('user-input');
@@ -187,7 +196,7 @@
                         element.insertAdjacentHTML('afterend', `<div class="references">${references}</div>`);
                     }
                 }
-            }, 5); 
+            }, 5);
             element.classList.add('text-justify');
         }
         function speakMessage(message) {
@@ -234,7 +243,7 @@
         }
 
         function removeReferences(message) {
-            return message.replace(/\(https?:\/\/[^\s]+\)/g,"[1]").trim();
+            return message.replace(/\(https?:\/\/[^\s]+\)/g, "[1]").trim();
         }
 
     </script>

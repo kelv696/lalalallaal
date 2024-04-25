@@ -78,10 +78,7 @@ rules:
   - intent: about_ai_course
   - action: utter_ai_in_northampton  
 
-- rule: give grades when asked about requirements 
-  steps:
-  - intent: what_need_for_ai
-  - action: utter_ai_prerequisites 
+
 
 - rule: give ai overview
   steps:
@@ -111,4 +108,22 @@ rules:
   steps:
   - intent: job_pros  
   - action: utter_job_proc   
+ 
+#pricing 
+- rule: ask what type of pricing the user is looking for
+  steps:
+  - intent: accom_price  
+  - action: utter_price_accoms   
+ 
+
+- rule: utter uni pricing 
+  steps:
+  - intent: accom_price_uni  
+  - action: utter_price_uni_accoms    
+ 
+
+- rule: utter non uni pricing 
+  steps:
+  - intent: non_uni_pricing  
+  - action: utter_price_private_accoms     
  
