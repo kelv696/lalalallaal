@@ -108,9 +108,16 @@
     displayInitialGreeting();
 });
 
+
+
 function displayInitialGreeting() {
     displayMessage('Hello there, please select from the drop-down menu the topic of conversation you may need some assistance in and ask away. This makes my job just a little bit easier :)', 'bot');
-   
+   displayHTML("Please select from options below",`<div class="flex-1"> 
+    <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('University Accommodation','accomodation')"> University Accommodation</button>
+    <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('About AI & Data Science','AI Course')">  About AI & Data Science</button>
+    <button class="bg-yellow-500 pl-2 pr-2 hover:bg-yellow-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('Internships & Placements','internships')">  Internships & Placements</button>
+    <button class="bg-pink-500 pl-2 pr-2 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded" onclick="preCursor('Student Life','student life')">  Student Life</button></div>
+`,'bot')
 } 
 
 
@@ -161,6 +168,12 @@ function displayInitialGreeting() {
             chatMessages.appendChild(messageElement);
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
+
+        function preCursor(message,trigger){
+            displayMessage(message, 'not_bot'); 
+            sendMessage(trigger);
+        }
+
 
         function typeMessage(message, element, references) {
             console.log(references)
@@ -215,6 +228,14 @@ function displayInitialGreeting() {
                     console.log(references);
                     const messageWithoutReferences = removeReferences(botMessage);
                     displayMessage(messageWithoutReferences, 'bot', references);
+                    
+                    displayHTML("",
+                                `   <span class="flex-1"> 
+                                        Did that answer your question?
+                                        <button class="bg-green-500 pl-2 pr-2 hover:bg-green-700 text-white font-bold py-2 rounded-lg">Yes</button>
+                                        <button class="bg-red-500 pl-2 pr-2 hover:bg-red-700 text-white font-bold py-2 rounded-lg   ">Nah</button>
+                                    </span>
+                                `,'bot')
                 } else {
                     console.error('Unexpected response format:', data);
                     displayMessage('Sorry, I encountered an error.', 'bot');
@@ -237,6 +258,38 @@ function displayInitialGreeting() {
 
         function removeReferences(message) {
             return message.replace(/\(https?:\/\/[^\s]+\)/g, "[1]").trim();
+        }
+
+
+
+        function displayHTML(message,htm_passed, sender, references) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('flex', 'mb-4');
+
+            if (sender === 'bot') {
+                messageElement.innerHTML = `
+                    
+                <img src="logo.png" class="h-14 w-14 mr-2 rounded-full">
+                    <div class="lalala text-justify text-black p-3 rounded-lg bot-message text-wrap overflow-auto max-w-96 shadow-lg">
+                        <p class="typing-effect"></p>
+                        ${htm_passed}
+                    </div>
+                
+                `;
+                const typingElement = messageElement.querySelector('.typing-effect');
+                typeMessage(message, typingElement, references);
+            } else {
+                messageElement.classList.add('justify-end');
+                messageElement.innerHTML = `
+                    <div class="lalala text-black p-3 rounded-lg max-w-xs shadow-lg">
+                        <p>${message}</p>
+                    </div>
+                    <img src="user.png" alt="Bot Logo" class="h-10 w-10 ml-2 rounded-full">
+                `;
+            }
+
+            chatMessages.appendChild(messageElement);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
     </script>
